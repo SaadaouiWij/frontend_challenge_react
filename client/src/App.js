@@ -15,7 +15,7 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route path="/" component={listPhones} exact />
-            <Route path="/details" component={DetailsPhone} exact />
+            <Route path="/details/:id" component={DetailsPhone} exact />
           </Switch>
         </BrowserRouter>
       </Container>

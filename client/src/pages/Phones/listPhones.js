@@ -7,6 +7,7 @@ import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPhones } from "../../redux/phoneSlice";
 import { Audio, Oval } from "react-loader-spinner";
+import { Link } from "react-router-dom";
 const ListPhones = () => {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
@@ -62,14 +63,17 @@ const ListPhones = () => {
                     alt="green iguana"
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {phone.title}
-                    </Typography>
+                    <Link to={`/details/${phone._id}`}>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {phone.title}
+                      </Typography>
+                    </Link>
                     <Typography variant="body2" color="text.secondary" noWrap>
                       {phone.description}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
+
                 <CardActions>
                   <Button size="small" color="primary">
                     Share
