@@ -56,3 +56,21 @@ exports.getAllPhones = async (req, res) => {
     return res.status(400).send("Error : " + err + " ,  try again");
   }
 };
+
+/* -------------------------------------------------------------------------------- */
+/* --------------------------|| Method get phone by ID|| -------------------------- */
+/* -------------------------------------------------------------------------------- */
+exports.getPhoneById = async (req, res) => {
+  const {idPhone} = req.params;
+  try {
+    // getting all the phone existing in the database with sort for the title
+    const phone = await Phone.findById(idPhone)
+      .exec();
+    // sending 201 OK request to the client with the  phone's object if everything is ok
+    res.send({ phone : phone });
+  } catch (err) {
+    console.log(err);
+    // sending 400 Bad Request to the client if something went wrong
+    return res.status(400).send("Error : " + err + " ,  try again");
+  }
+};

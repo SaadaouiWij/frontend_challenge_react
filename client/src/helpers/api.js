@@ -4,5 +4,13 @@ import axios from "axios";
 export const getAllPhonesAPI = () => {
   return axios
     .get("http://localhost:8000/api/phones")
-    .catch((err) => console.log("aaaaa :", err.response.status));
+    .catch((err) => console.log("error :", err.response.status));
+};
+
+
+// methode to get phone by ID
+export const getPhoneByIdAPI = (idPhone) => {
+  return axios
+    .get("http://localhost:8000/api/phone/" + idPhone)
+    .catch((err) => console.log("error :", err.response.status));
 };
