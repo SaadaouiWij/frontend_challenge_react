@@ -15,7 +15,6 @@ This mini project is developed in order to pass a test frontend challenger react
 
 ## :wrench: Installation & Usage
 
-- Clone the Master branch
 - navigate to Client directory by typing "cd Client" and run "npm install"
 - navigate to Server directory by typing "cd Server" and run "npm install"
 - Run "node start" in the server directory
